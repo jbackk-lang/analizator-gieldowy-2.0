@@ -1,5 +1,5 @@
 
-# 📊 TIMDR analzator-gieldowy-2.0
+# 📊 TIMDR analizator-gieldowy-2.0
 
 ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688)
@@ -12,7 +12,7 @@ Aplikacja analityczno-symulacyjna wykorzystująca koncepcję **skrętu informacj
 
 ## 🚀 Główny opis projektu
 
-**TIMDR (analzator-gieldowy-2.0)** to hybrydowy system złożony z backendu API oraz interaktywnego panelu kontrolnego (Dashboard). System pobiera aktualne oraz historyczne dane finansowe, wylicza wskaźniki dynamiki trendu (m.in. SMA10, SMA30) oraz stosuje parametryczny modyfikator skrętu ($k$) do generowania scenariuszy handlowych:
+**TIMDR (analizator-gieldowy-2.0)** to hybrydowy system złożony z backendu API oraz interaktywnego panelu kontrolnego (Dashboard). System pobiera aktualne oraz historyczne dane finansowe, wylicza wskaźniki dynamiki trendu (m.in. SMA10, SMA30) oraz stosuje parametryczny modyfikator skrętu ($k$) do generowania scenariuszy handlowych:
 - **Kontratrendowych** (korekcyjnych),
 - **Ambiwalentnych** (konsolidacyjnych),
 - **Samospełniających się** (impulsowych).
