@@ -1,0 +1,123 @@
+Spółki z indeksu WIG20 (największe i najbardziej płynne)
+Nazwa spółki	Symbol w Yahoo Finance	Branża
+PKN ORLEN	PKN.WA	Paliwa i energetyka
+PZU SA	PZU.WA	Ubezpieczenia
+PKO Bank Polski	PKO.WA	Bankowość
+Allegro.eu	ALE.WA	Handel internetowy
+CD Projekt	CDR.WA	Gry wideo
+KGHM Polska Miedź	KGH.WA	Górnictwo i hutnictwo
+LPP SA	LPP.WA	Odzież i obuwie (m.in. Reserved)
+mBank	MBK.WA	Bankowość
+Alior Bank	ALR.WA	Bankowość
+Dino Polska	DNP.WA	Handel detaliczny (sieć sklepów spożywczych)
+PGE Polska Grupa Energetyczna	PGE.WA	Energetyka
+Pepco Group	PCO.WA	Handel detaliczny (sieć sklepów z odzieżą i artykułami dla domu)
+🔹 Spółki z indeksu mWIG40 (średnie spółki)
+Nazwa spółki	Symbol w Yahoo Finance	Branża
+AB SA	ABE.WA	Dystrybucja komputerów i elektroniki
+Agora SA	AGO.WA	Wydawnictwa (m.in. Gazeta Wyborcza)
+Ambra SA	AMB.WA	Napoje alkoholowe (m.in. wina)
+Asseco Poland	ACP.WA	Oprogramowanie i usługi IT
+Benefit Systems	BFT.WA	Usługi (karty sportowe Multisport)
+Boryszew	BRS.WA	Przemysł (m.in. aluminium, motoryzacja)
+Budimex	BDX.WA	Budownictwo
+CCC SA	CCC.WA	Obuwie i odzież
+Ciech	CIE.WA	Przemysł chemiczny
+Comarch	CMR.WA	Oprogramowanie i usługi IT
+Cyfrowy Polsat	CPS.WA	Media i telekomunikacja
+Enea	ENA.WA	Energetyka
+Eurocash	EUR.WA	Dystrybucja artykułów spożywczych
+Forte	FTE.WA	Meble
+Getin Noble Bank	GNB.WA	Bankowość
+Gino Rossi	GRO.WA	Odzież i obuwie
+Grupa Kęty	KTY.WA	Przemysł (m.in. profile aluminiowe, opakowania)
+Grupa Polsat Plus	POL.WA	Media i telekomunikacja
+ING Bank Śląski	ING.WA	Bankowość
+JSW	JSW.WA	Górnictwo (koks i węgiel)
+Mercator Medical	MRC.WA	Sprzęt medyczny (m.in. rękawiczki)
+MOL	MOL.WA	Paliwa (węgierski koncern)
+Mo-BRUK	MBR.WA	Gospodarka odpadami
+Neuca	NEA.WA	Dystrybucja farmaceutyczna
+Orange Polska	OPL.WA	Telekomunikacja
+Pepco Group	PCO.WA	Handel detaliczny
+PlayWay	PLW.WA	Gry wideo (wydawca)
+Polenergia	PEP.WA	Energetyka (odnawialna)
+Polimex-Mostostal	PXM.WA	Budownictwo i usługi inżynieryjne
+Powszechny Zakład Ubezpieczeń	PZU.WA	Ubezpieczenia
+Ryvu Therapeutics	RVU.WA	Biotechnologia (leki)
+Santander Bank Polska	SAN.WA	Bankowość
+Selvita	SLV.WA	Biotechnologia (badania i rozwój leków)
+Stalexport Autostrady	STL.WA	Infrastruktura (autostrady)
+Tauron PE	TPE.WA	Energetyka
+Ten Square Games	TSG.WA	Gry wideo (mobile)
+XTB	XTB.WA	Finanse (broker online)
+🔹 Spółki z indeksu sWIG80 (mniejsze spółki)
+Oto kilka przykładów mniejszych spółek, które również mogą być interesujące:
+
+Nazwa spółki	Symbol w Yahoo Finance	Branża
+11 BIT STUDIOS	11B.WA	Gry wideo (autorzy This War of Mine)
+AC SA	ACG.WA	Części samochodowe
+Action SA	ACT.WA	Komputery i elektronika
+AmRest	AMR.WA	Gastronomia (operator KFC, Pizza Hut)
+Biomed Lublin	BML.WA	Biotechnologia (szczepionki)
+Captor Therapeutics	CTX.WA	Biotechnologia (leki)
+Cloud Technologies	CLD.WA	Oprogramowanie (chmura)
+DataWalk	DWK.WA	Oprogramowanie (analityka danych)
+Erbud	ERB.WA	Budownictwo
+Fabryka Farb i Lakierów Śnieżka	SNK.WA	Przemysł chemiczny (farby)
+Grodno	GRN.WA	Handel detaliczny (artykuły budowlane)
+Hiprom	HPM.WA	Oprogramowanie (dla przemysłu)
+Image Power	IPW.WA	Gry wideo
+INSYS	INS.WA	Oprogramowanie (dla banków)
+LARQ	LRQ.WA	Gry wideo
+MCI Capital	MCI.WA	Inwestycje (private equity)
+Medicalgorithmics	MDG.WA	Medtech (kardiologia)
+Miraculum	MIR.WA	Kosmetyki
+Muza	MZA.WA	Wydawnictwa (książki)
+Novaturas	NTU.WA	Biura podróży (litewskie)
+One-2-Touch	O2T.WA	Oprogramowanie (dla e-commerce)
+Pamapol	PMP.WA	Przemysł spożywczy
+Polski Holding Nieruchomości	PHN.WA	Nieruchomości
+Przedsiębiorstwo Eksploatacji Rurociągów Naftowych "Przyjaźń"	PRY.WA	Infrastruktura paliwowa
+Rail-Mil	RML.WA	Transport kolejowy
+Rawlplug	RWL.WA	Artykuły budowlane
+Sanok Rubber Company	SNR.WA	Przemysł (guma)
+Seco/Warwick	SWK.WA	Przemysł (piece przemysłowe)
+Sygnity	SGN.WA	Oprogramowanie i usługi IT
+TenderHut	TEN.WA	Oprogramowanie (dla administracji)
+Unibep	UNI.WA	Budownictwo
+Vistula	VST.WA	Odzież
+Wirtualna Polska	WP.WA	Media (portal internetowy)
+ZUE	ZUE.WA   Budownictwo (infrastruktura)
+
+Najbardziej znane spółki (tzw. "Blue Chips")
+Spółka	Symbol Yahoo Finance	Branża
+Apple Inc.	AAPL	Technologie (Consumer Electronics)
+Microsoft Corp.	MSFT	Technologie (Oprogramowanie)
+NVIDIA Corp.	NVDA	Technologie (Półprzewodniki)
+Alphabet Inc. (Google)	GOOGL lub GOOG	Technologie (Internet)
+Amazon.com Inc.	AMZN	E-commerce / Technologie
+Meta Platforms (Facebook)	META	Technologie (Media)
+Tesla Inc.	TSLA	Motoryzacja / Technologie
+Berkshire Hathaway	BRK.B	Finanse (Konglomerat)
+JPMorgan Chase	JPM	Finanse (Bankowość)
+Visa Inc.	V	Finanse (Płatności)
+Indeksy giełdowe
+W projekcie możesz pobierać dane nie tylko dla pojedynczych spółek, ale również dla całych indeksów:
+
+Indeks	Symbol Yahoo Finance	Opis
+S&P 500	^GSPC	Indeks 500 największych spółek w USA
+Nasdaq 100	^NDX	Indeks technologiczny (100 spółek)
+Dow Jones	^DJI	Indeks 30 największych spółek przemysłowych
+
+🇵🇱 Symbole polskich indeksów giełdowych dla Yahoo Finance
+Wszystkie dane na Yahoo Finance są oznaczone jako notowania "Delayed Quote" (opóźnione).
+
+Indeks	Symbol w Yahoo Finance	Opis
+WIG20	WIG20.WA	Indeks 20 największych i najbardziej płynnych spółek na GPW
+mWIG40	MWIG40.WA	Indeks 40 średnich spółek (następne po WIG20)
+sWIG80	SWIG80.WA	Indeks 80 małych spółek
+WIG	WIG.WA	Indeks szerokiego rynku (wszystkie spółki z GPW)
+WIG-Banki	WIGBANKI.WA	Indeks sektorowy – banki
+WIG-Paliwa	WIGPALIWA.WA	Indeks sektorowy – paliwa i energetyka
+Notowania są podawane w złotych (PLN), a ich ceny mogą się wahać z dnia na dzień, co widać po różnicach w notowaniach z różnych dni – np. z 3,663.99 ptk. do 3,592.99 ptk
