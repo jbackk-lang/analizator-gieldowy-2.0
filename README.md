@@ -1,0 +1,1 @@
+# analzator-gieldowy-2.0
