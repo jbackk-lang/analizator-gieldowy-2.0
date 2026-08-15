@@ -1,28 +1,36 @@
 @echo off
-title TIMDR - Boundary-Matter Launcher
-echo ========================================
-echo   TIMDR - Boundary-Matter Launcher
-echo   (c) 2026
-echo ========================================
+setlocal
+cd /d "%~dp0"
+
+echo === TIMDR 2.0 - analizator-gieldowy-2.0 ===
+echo Instaluje zaleznosci (FastAPI, uvicorn, pandas, numpy)...
+python -m pip install --quiet fastapi uvicorn pydantic numpy pandas httpx
+if errorlevel 1 (
+    echo BLAD: nie udalo sie zainstalowac zaleznosci. Sprawdz czy Python i pip sa zainstalowane.
+    pause
+    exit /b 1
+)
+
+REM WAZNE: yfinance zawsze dociagany do NAJNOWSZEJ wersji (--upgrade), tak
+REM jak w run.bat wersji 1 - Yahoo Finance ma ochrone antybotowa i stare
+REM wersje yfinance (bez curl_cffi) dostaja puste dane zamiast prawdziwych.
+echo Aktualizuje yfinance do najnowszej wersji...
+python -m pip install --quiet --upgrade yfinance
+if errorlevel 1 (
+    echo BLAD: nie udalo sie zainstalowac/zaktualizowac yfinance.
+    pause
+    exit /b 1
+)
+
 echo.
-echo [1/3] Sprawdzanie zaleznosci...
-python -m pip install -r requirements.txt
-echo [OK] Zaleznosci zainstalowane.
+echo Uruchamiam serwer pod http://127.0.0.1:8000 ...
+echo   - Dashboard (przycisk "Dane demo") dziala zawsze, dane syntetyczne.
+echo   - Przycisk "Analizuj (zywe dane)" pobierze prawdziwe dane z Yahoo
+echo     Finance, o ile ten komputer ma dostep do internetu.
+echo   - Dokumentacja API (Swagger): http://127.0.0.1:8000/docs
 echo.
-echo [2/3] Uruchamianie API (port 8000)...
-start "TIMDR API" cmd /k "python -m uvicorn api:app --host 0.0.0.0 --port 8000 --reload"
-echo [OK] API uruchomione w nowym oknie.
-echo.
-echo [3/3] Uruchamianie Streamlit Dashboard (port 8501)...
-timeout /t 3 /nobreak > nul
-start "TIMDR Dashboard" cmd /k "python -m streamlit run app.py"
-echo [OK] Dashboard uruchomiony w nowym oknie.
-echo.
-echo ========================================
-echo   Wszystko uruchomione!
-echo   API:        http://localhost:8000
-echo   Dashboard:  http://localhost:8501
-echo ========================================
-echo.
-echo Aby zatrzymac, zamknij okna terminala.
+
+start "" http://127.0.0.1:8000
+python -m uvicorn api:app --host 127.0.0.1 --port 8000
+
 pause

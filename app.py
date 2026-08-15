@@ -1,6 +1,14 @@
 """
 Boundary-Matter TIMDR Dashboard
 Rzeczywiste dane z Yahoo Finance przez API
+
+UWAGA: Ten plik (oryginalny dashboard Streamlit) NIE jest już wymagany
+do normalnego użytkowania - api.py teraz serwuje własny dashboard
+(static/dashboard.html) z tego samego portu co API (patrz README.md,
+sekcja "Co zmieniono względem oryginału"). Zostawiony tutaj jako
+opcjonalna alternatywa, gdyby ktoś wolał interfejs Streamlit.
+Uruchomienie: `python -m streamlit run app.py` (wymaga też uruchomionego
+`api.py` w drugim procesie/porcie 8000).
 """
 
 import streamlit as st
@@ -23,14 +31,14 @@ st.caption("Tryb: lewoskrętny (k = -0.75) | Dane rzeczywiste z Yahoo Finance pr
 # ------------------ SIDEBAR ------------------
 with st.sidebar:
     st.header("⚙️ Konfiguracja")
-    
+
     symbol = st.text_input("Symbol giełdowy", value="AAPL").upper()
     period = st.selectbox(
         "Okres danych",
         options=["1mo", "3mo", "6mo", "1y", "2y", "5y"],
         index=2
     )
-    
+
     k = st.slider(
         "Siła skrętu (k)",
         min_value=-1.50,
@@ -39,9 +47,9 @@ with st.sidebar:
         step=0.01,
         help="Parametr lewoskrętny – ujemne wartości opóźniają cykle"
     )
-    
+
     api_url = st.text_input("Adres API", value="http://localhost:8000")
-    
+
     fetch_btn = st.button("🔄 Pobierz dane", type="primary", use_container_width=True)
 
 # ------------------ FUNKCJE ------------------
@@ -106,21 +114,21 @@ if data:
     col2.metric("Okres", data.get("period", "b.d."))
     col3.metric("Dni", data["metrics"]["days"])
     col4.metric("Ostatnia cena", f"${data['metrics']['last_price']:.2f}")
-    
+
     change = data["metrics"]["change_pct"]
     col5.metric("Zmiana", f"{change:.2f}%", delta=change)
-    
+
     st.divider()
-    
+
     # ------------------ WYKRES CEN (prawdziwe dane) ------------------
     st.subheader("📈 Wykres cen zamknięcia")
-    
+
     if ohlcv and len(ohlcv["dates"]) > 0:
         df_price = pd.DataFrame({
             "Data": pd.to_datetime(ohlcv["dates"]),
             "Cena": ohlcv["close"]
         })
-        
+
         fig = px.line(
             df_price,
             x="Data",
@@ -136,27 +144,27 @@ if data:
         dates = pd.date_range(end=datetime.now(), periods=days)
         prices = np.linspace(last_price * 0.9, last_price, days) + np.random.normal(0, 0.5, days)
         prices = np.maximum(prices, 0)
-        
+
         df_price = pd.DataFrame({"Data": dates, "Cena": prices})
         fig = px.line(df_price, x="Data", y="Cena", title=f"{data['symbol']} – cena (symulacja)")
         st.plotly_chart(fig, use_container_width=True)
         st.caption("⚠️ Brak danych OHLCV – wyświetlono symulację")
-    
+
     st.divider()
-    
+
     # ------------------ METRYKI ------------------
     st.subheader(f"🧠 Metryki dla k = {data['k']:.2f}")
-    
+
     col1, col2, col3 = st.columns(3)
     col1.metric("SMA 10", f"${data['metrics']['sma10']:.2f}")
     col2.metric("SMA 30", f"${data['metrics']['sma30']:.2f}")
     col3.metric("K (skręt)", f"{data['k']:.2f}")
-    
+
     st.divider()
-    
+
     # ------------------ TEZY ------------------
     st.subheader("🧠 Wygenerowane tezy")
-    
+
     if "theses" in data:
         for thesis in data["theses"]:
             with st.expander(f"Teza {thesis['id']}: {thesis['type']} (Prawdopodobieństwo: {thesis['probability']}%)"):
@@ -165,21 +173,21 @@ if data:
                     st.info(f"**Rekomendacja:** {thesis['action']}")
                 if thesis.get("entry"):
                     st.write(f"**Wejście:** {thesis['entry']} | **Stop-loss:** {thesis['stop_loss']} | **Take-profit:** {thesis['take_profit']}")
-    
+
     st.divider()
-    
+
     # ------------------ SYGNAŁ ------------------
     if "signal" in data:
         st.subheader("📊 Sygnał handlowy")
         signal = data["signal"]
-        
+
         if signal["action"] == "KUP":
             st.success(f"🟢 {signal['action']} – {signal['probability']}% (cena: ${signal['price']:.2f})")
         elif signal["action"] == "SPRZEDAJ":
             st.error(f"🔴 {signal['action']} – {signal['probability']}% (cena: ${signal['price']:.2f})")
         else:
             st.warning(f"🟡 {signal['action']} – {signal['probability']}% (cena: ${signal['price']:.2f})")
-    
+
     st.divider()
     st.caption(f"Ostatnia aktualizacja: {data.get('timestamp', 'b.d.')}")
 

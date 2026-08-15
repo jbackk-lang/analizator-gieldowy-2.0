@@ -1,6 +1,13 @@
 """
 Moduł do pobierania rzeczywistych danych giełdowych.
 Obsługuje yfinance (domyślnie) oraz Alpha Vantage (opcjonalnie).
+
+UWAGA: api.py NIE importuje tego modułu - ma własną, osobną kopię tej
+samej logiki (fetch_yfinance). Ten plik jest martwym kodem w oryginalnym
+repo (patrz README.md, sekcja "Obserwacja - data_fetcher.py jest martwym
+kodem"). Zostawiony bez zmian dla zgodności z oryginałem / na wypadek
+przyszłej integracji (np. obsługi Alpha Vantage jako alternatywnego
+źródła w api.py).
 """
 
 import yfinance as yf
@@ -21,10 +28,10 @@ def fetch_yfinance(symbol: str = DEFAULT_SYMBOL, period: str = DEFAULT_PERIOD) -
     try:
         ticker = yf.Ticker(symbol)
         hist = ticker.history(period=period)
-        
+
         if hist.empty:
             raise ValueError(f"Brak danych dla {symbol} (okres: {period})")
-        
+
         # Konwersja na listy (format zgodny z oczekiwaniami API)
         result = {
             "open": hist["Open"].tolist(),
@@ -48,26 +55,26 @@ def fetch_alpha_vantage(symbol: str = DEFAULT_SYMBOL, api_key: str = None) -> di
     """
     if not api_key:
         raise ValueError("Brak klucza API dla Alpha Vantage")
-    
+
     import requests
     BASE_URL = "https://www.alphavantage.co/query"
-    
+
     params = {
         "function": "TIME_SERIES_DAILY",
         "symbol": symbol,
         "outputsize": "compact",
         "apikey": api_key
     }
-    
+
     response = requests.get(BASE_URL, params=params)
     data = response.json()
-    
+
     if "Time Series (Daily)" not in data:
         raise ValueError(f"Błąd Alpha Vantage: {data.get('Error Message', 'Nieznany błąd')}")
-    
+
     ts = data["Time Series (Daily)"]
     dates = sorted(ts.keys())  # posortowane chronologicznie
-    
+
     result = {
         "open": [float(ts[d]["1. open"]) for d in dates],
         "high": [float(ts[d]["2. high"]) for d in dates],
